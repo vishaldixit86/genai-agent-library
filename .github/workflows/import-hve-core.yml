@@ -6,6 +6,7 @@ on:
     paths:
       - "scripts/import_hve_core.py"
       - ".github/workflows/import-hve-core.yml"
+      - "hve-core/README.md"
 permissions:
   contents: write
 jobs:
