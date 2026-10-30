@@ -1,0 +1,11 @@
+{
+  "change_summary": "",
+  "risk_assessment": "",
+  "test_evidence": "",
+  "decision_record": "",
+  "flow_reviewed": false,
+  "security_reviewed": false,
+  "rollback_plan": "",
+  "sensitive_operation": false,
+  "human_approval": false
+}
