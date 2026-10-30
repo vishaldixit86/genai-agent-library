@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/microsoft/hve-core",
+  "version": "3.2.2",
+  "counts": {
+    "agents": 61,
+    "skills": 86,
+    "rules": 53,
+    "commands": 0
+  }
+}
