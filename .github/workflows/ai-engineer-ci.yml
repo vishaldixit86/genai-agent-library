@@ -1,0 +1,26 @@
+name: AI Engineer Platform Checks
+on:
+  push:
+    paths:
+      - 'platform/**'
+      - 'evaluations/routing-cases.json'
+      - '.github/workflows/ai-engineer-ci.yml'
+  pull_request:
+    paths:
+      - 'platform/**'
+      - 'evaluations/routing-cases.json'
+      - '.github/workflows/ai-engineer-ci.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile scripts
+        run: python -m compileall -q platform
+      - name: Evaluate routing policy
+        run: python platform/evaluate.py
