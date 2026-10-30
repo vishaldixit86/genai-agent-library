@@ -1,0 +1,42 @@
+[
+  {
+    "task": "Understand this Python repository",
+    "workflow": "understand",
+    "approval_required": false
+  },
+  {
+    "task": "Design an AML ontology",
+    "workflow": "design",
+    "approval_required": false
+  },
+  {
+    "task": "Fix a failing parser",
+    "workflow": "fix",
+    "approval_required": false
+  },
+  {
+    "task": "Review my PR",
+    "workflow": "review",
+    "approval_required": false
+  },
+  {
+    "task": "Test the document pipeline",
+    "workflow": "test",
+    "approval_required": false
+  },
+  {
+    "task": "Deploy to production",
+    "workflow": "release",
+    "approval_required": true
+  },
+  {
+    "task": "Implement case-based access control",
+    "workflow": "build",
+    "approval_required": true
+  },
+  {
+    "task": "Prepare a handover guide",
+    "workflow": "handover",
+    "approval_required": false
+  }
+]
