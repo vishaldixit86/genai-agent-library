@@ -1,0 +1,28 @@
+# Copy to a PRIVATE project repository as .github/workflows/ai-engineer-evidence.yml
+# Adapt required paths and use branch protection to make the check required.
+name: AI Engineer Change Evidence
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'app/**'
+      - 'docs/change-evidence.json'
+permissions:
+  contents: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate change evidence
+        run: |
+          if [ ! -f docs/change-evidence.json ]; then
+            echo "Missing docs/change-evidence.json"
+            exit 1
+          fi
+          python tools/ai-engineer/policy_gate.py --evidence docs/change-evidence.json
+# Installer must also copy platform/policy_gate.py to tools/ai-engineer/ before activation.
+# This is presence validation; add independent test, security, SAST and approval checks.
