@@ -1,0 +1,41 @@
+name: Import Microsoft HVE Core
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/import_hve_core.py"
+      - ".github/workflows/import-hve-core.yml"
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout personal library
+        uses: actions/checkout@v4
+        with:
+          path: library
+          persist-credentials: true
+      - name: Checkout Microsoft HVE Core
+        uses: actions/checkout@v4
+        with:
+          repository: microsoft/hve-core
+          ref: main
+          path: upstream
+          persist-credentials: false
+      - name: Run manifest-driven importer
+        run: python3 library/scripts/import_hve_core.py upstream library
+      - name: Commit imported files
+        working-directory: library
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hve-core skills own-agents .github/agents .github/skills .github/instructions
+          if [ -d .github/prompts ]; then git add .github/prompts; fi
+          if git diff --cached --quiet; then
+            echo "No updates."
+          else
+            git commit -m "Import Microsoft HVE Core components"
+            git push
+          fi
