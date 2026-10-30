@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "python-fastapi",
+      "focus": [
+        "async Python",
+        "Pydantic",
+        "OpenAPI",
+        "pytest"
+      ]
+    },
+    {
+      "id": "react",
+      "focus": [
+        "React",
+        "TypeScript",
+        "a11y",
+        "component tests"
+      ]
+    },
+    {
+      "id": "aws",
+      "focus": [
+        "IAM",
+        "Bedrock",
+        "CloudWatch",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "azure",
+      "focus": [
+        "RBAC",
+        "AI Foundry",
+        "monitoring"
+      ]
+    },
+    {
+      "id": "terraform",
+      "focus": [
+        "state",
+        "plans",
+        "drift",
+        "least privilege"
+      ]
+    },
+    {
+      "id": "data-engineering",
+      "focus": [
+        "pipelines",
+        "schemas",
+        "data quality",
+        "lineage"
+      ]
+    },
+    {
+      "id": "genai-graphrag",
+      "focus": [
+        "RAG",
+        "ontologies",
+        "entity resolution",
+        "evaluation",
+        "access boundaries"
+      ]
+    }
+  ]
+}
